@@ -1,0 +1,13 @@
+wow
+wsw3
+wow4
+
+//        final Properties prop = new Properties();
+//        prop.setProperty("key", "value");
+//        prop.setProperty("size", "42");
+//        prop.setProperty("int", String.valueOf(Integer.MAX_VALUE));
+//        try (Writer writer = new FileWriter("prop.properties")) {
+//            prop.store(writer, "best");
+//        } catch (IOException e) {
+//            System.out.println("e= " + e.getMessage());
+//        }

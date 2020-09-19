@@ -22,13 +22,16 @@ public class Task4 {
 //        people[5] = person6;
 
         System.out.println(Arrays.toString(people));
+        Arrays.sort(people,new PersonComparatorByAge());
+        Arrays.sort(people,new PersonComparatorByName());
+        System.out.println(Arrays.toString(people));
 
-        long start = System.currentTimeMillis();
-        FirstMethod firstMethod = new FirstMethod();
-        firstMethod.sortArray(people);
-        long and = System.currentTimeMillis() - start;
-        firstMethod.showRes(people);
-        System.out.println("Total time = " + and + "ms");
+//        long start = System.currentTimeMillis();
+//        FirstMethod firstMethod = new FirstMethod();
+//        firstMethod.sortArray(people);
+//        long and = System.currentTimeMillis() - start;
+//        firstMethod.showRes(people);
+//        System.out.println("Total time = " + and + "ms");
 
 
     }

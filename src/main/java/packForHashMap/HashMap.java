@@ -1,12 +1,12 @@
 package packForHashMap;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class HashMap<K, V> implements Map<K, V> {
     public Node<K, V>[] nodes;
-    public Node<K, V> headNode;
     private static final int INITIAL_CAPACITY = 16;
     private static final double LOAD_FACTOR = 0.75;
     private int bucketCounter;
@@ -17,7 +17,11 @@ public class HashMap<K, V> implements Map<K, V> {
     }
 
     public HashMap(int capacity) {
-        nodes = new Node[Math.abs(capacity)];
+        if (capacity<0){
+            throw new IllegalArgumentException("Wrong capacity." + capacity);
+        }
+        nodes = new Node[capacity];
+
     }
 
     @Override
@@ -96,7 +100,6 @@ public class HashMap<K, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
-        Node<K, V> node = new Node<>(key, value);
 
         if (isFull()) {
             increaseCapacity();
@@ -174,16 +177,17 @@ public class HashMap<K, V> implements Map<K, V> {
         for (int i = 0; i < nodes.length; i++) {
             nodes[i] = null;
         }
+        size=0;
 
     }
 
     @Override
-    public Set keySet() {
-        return null;
+    public Set<K>keySet() {
+        return new HashSet<K>();
     }
 
     @Override
-    public Collection values() {
+    public Collection<V> values() {
         return null;
     }
 
